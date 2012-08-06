@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+  <groupId>net.treetechnologies.masters</groupId>
+  <artifactId>masters</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>master-wsdlgenerator</artifactId>
+  <packaging>pom</packaging>
+
+  <name>Master WSDL Generator</name>
+
+    <dependencies>
+        <dependency>
+          <groupId>net.treetechnologies.utilities</groupId>
+          <artifactId>wsdl-parser</artifactId>
+          <version>0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+          <groupId>net.treetechnologies.masters</groupId>
+          <artifactId>master-entityInterface</artifactId>
+          <version>0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
+<build>
+    <plugins>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+
+          <execution>
+            <id>generate-wsdl</id>
+            <phase>generate-resources</phase>
+            <configuration>
+              <target>
+
+        <java classname="org.apache.cxf.tools.java2ws.JavaToWS" fork="true">
+            <arg value="-wsdl"/>
+            <arg value="-o"/>
+            <arg value="../../conf/wsdl/MasterDataManagement.wsdl"/>
+            <arg value="-a"/>
+            <arg value="http://localhost:8180/EntityService/MasterDataManagement"/>
+            <arg value="-createxsdimports"/> 
+            <arg value="net.treetechnologies.masters.services.interfaces.MasterDataManagement"/>
+            <classpath>
+                <path refid="maven.compile.classpath"/>
+            </classpath>
+        </java>
+
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+
+          <execution>
+            <id>generate-entities</id>
+            <phase>compile</phase>
+            <configuration>
+              <target>
+
+                <java fork="true" classname="net.treetechnologies.wsdl.parser.ParseWSDL" failOnError="false">
+                <arg value="../../conf/wsdl/"/>
+                <arg value="MasterDataManagement"/>
+                    <classpath>
+                        <path refid="maven.compile.classpath"/>
+                    </classpath>
+                </java>
+
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        </plugin>
+
+
+
+    </plugins>
+</build>
+
+</project>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+  <groupId>net.treetechnologies.masters</groupId>
+  <artifactId>masters</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>master-client</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Master Client Generator</name>
+
+<build>
+    <plugins>
+
+<plugin>
+	<groupId>org.apache.cxf</groupId>
+	<artifactId>cxf-codegen-plugin</artifactId>
+	<version>${cxf.version}</version>
+	<executions>
+		<execution>
+			<id>generate-sources</id>
+			<phase>generate-sources</phase>
+			<configuration>
+				<sourceRoot>${project.build.sourceDirectory}</sourceRoot>
+				<wsdlOptions>
+					<wsdlOption>
+						<wsdl>../../conf/wsdl/MasterDataManagement.wsdl</wsdl>
+						<extraargs>
+				            <extraarg>-verbose</extraarg>
+				            <extraarg>-frontend</extraarg>
+				            <extraarg>jaxws21</extraarg>
+				            <extraarg>-b</extraarg>
+				            <extraarg>binding.xml</extraarg>
+					    </extraargs>
+					</wsdlOption>
+				</wsdlOptions>
+			</configuration>
+			<goals>
+				<goal>wsdl2java</goal>
+			</goals>
+		</execution>
+	</executions>
+</plugin>
+
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+
+          <execution>
+            <id>generate-entities</id>
+            <phase>clean</phase>
+            <configuration>
+              <target>
+                    <delete dir="src/main/java/net/treetechnologies/entities"/>
+                    <delete dir="src/main/java/net/treetechnologies/masters/services/interfaces"/>
+                    <delete dir="src/main/java/org"/>
+					<delete dir="target"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        </plugin>
+
+
+
+    </plugins>
+</build>
+
+<properties>
+    <cxf.version>2.6.1</cxf.version>
+</properties>
+
+
+</project>

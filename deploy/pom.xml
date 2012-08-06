@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+ 
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>net.treetechnologies.masters</groupId>
+    <artifactId>masters-ear</artifactId>
+    <version>0.1-SNAPSHOT</version>
+ 
+    <packaging>ear</packaging>
+    <name>Masters EAR</name>
+
+ 
+ 
+    <dependencies>
+	<dependency>
+	  <groupId>net.treetechnologies.common.dependency</groupId>
+	  <artifactId>stdJars</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	  <type>pom</type>
+      <scope>provided</scope>
+	</dependency>
+	 <dependency>
+	  <groupId>net.treetechnologies.masters</groupId>
+	  <artifactId>master-entityInterface</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	</dependency> 
+	 <dependency>
+	  <groupId>net.treetechnologies.masters</groupId>
+	  <artifactId>master-entityService</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	  <type>ejb</type>
+	</dependency> 
+    <dependency>
+      <groupId>net.treetechnologies.utilities</groupId>
+      <artifactId>entitiesGenerator</artifactId>
+      <version>0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common</groupId>
+	  <artifactId>persistenceRoot</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	  <type>ejb</type>
+	</dependency>
+    </dependencies>
+ 
+    <build>
+        <finalName>masterServices</finalName>
+         <plugins>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+                    <modules>
+                        <ejbModule>
+							  <groupId>net.treetechnologies.masters</groupId>
+							  <artifactId>master-entityService</artifactId>
+                        </ejbModule>
+						<ejbModule>
+							  <groupId>net.treetechnologies.common</groupId>
+							  <artifactId>persistenceRoot</artifactId>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-ear-plugin</artifactId>
+                <configuration>
+	                 <defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+ 
+   <repositories>
+    <repository>
+      <id>${snapshot.repository.id}</id>
+      <name>Tree Snapshot Repository</name>
+      <layout>default</layout>
+      <url>${snapshot.url}</url>
+      <snapshots>
+          <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+    <repository>
+      <id>${release.repository.id}</id>
+      <name>Tree Snapshot Repository</name>
+      <layout>default</layout>
+      <url>${release.url}</url>
+    </repository>
+  </repositories>
+
+
+ 
+  <properties>
+   <release.url>http://192.168.2.23:8081/nexus/content/repositories/releases</release.url>
+   <snapshot.url>http://192.168.2.23:8081/nexus/content/repositories/snapshots</snapshot.url>
+   <snapshot.repository.id>snapshot</snapshot.repository.id>
+   <release.repository.id>release</release.repository.id>
+</properties>
+
+
+ 
+</project>

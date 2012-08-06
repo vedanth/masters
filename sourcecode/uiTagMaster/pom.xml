@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+  <groupId>net.treetechnologies.masters</groupId>
+  <artifactId>masters</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>uiTagMaster</artifactId>
+  <packaging>war</packaging>
+
+  <name>UI Tag Master</name>
+
+
+   <dependencies>
+	<dependency>
+	  <groupId>net.treetechnologies.common.dependency</groupId>
+	  <artifactId>stdJars</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	  <type>pom</type>
+      <scope>provided</scope>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.masters</groupId>
+	  <artifactId>master-client</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.vaadin</groupId>
+	  <artifactId>vaadin</artifactId>
+	  <version>6.7.6</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>cxf</artifactId>
+	  <version>2.6.1</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>cxf-manifest</artifactId>
+	  <version>2.6.1</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>neethi</artifactId>
+	  <version>3.0.2</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.vaadin</groupId>
+	  <artifactId>vaadin-ipc-for-liferay</artifactId>
+	  <version>1.0.0</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>wsdl4j</artifactId>
+	  <version>1.6.2</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>wss4j</artifactId>
+	  <version>1.6.6</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.cxf</groupId>
+	  <artifactId>xmlschema-core</artifactId>
+	  <version>2.0.2</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common</groupId>
+	  <artifactId>uiUtil</artifactId>
+	  <version>0.1-SNAPSHOT</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.apache</groupId>
+	  <artifactId>commons-configuration</artifactId>
+	  <version>1.8</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.apache</groupId>
+	  <artifactId>commons-lang</artifactId>
+	  <version>2.4</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.apache</groupId>
+	  <artifactId>commons-beanutils</artifactId>
+	  <version>1.8.3</version>
+	</dependency>
+	<dependency>
+	  <groupId>net.treetechnologies.common.stdjars.apache</groupId>
+	  <artifactId>commons-collections</artifactId>
+	  <version>3.2.1</version>
+	</dependency>
+    </dependencies>
+
+
+
+</project>

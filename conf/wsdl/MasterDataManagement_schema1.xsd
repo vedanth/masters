@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?><xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://net/treetechnologies/entities/schema/masters" xmlns:tns="http://net/treetechnologies/masters/services/interfaces/MasterDataManagement" elementFormDefault="unqualified" targetNamespace="http://net/treetechnologies/masters/services/interfaces/MasterDataManagement" version="1.0">
+<xs:import namespace="http://net/treetechnologies/entities/schema/masters" schemaLocation="xsd/Masters.xsd"/>
+<xs:element name="FaultInfo" type="tns:faultInfo"/>
+<xs:element name="createTag" type="tns:createTag"/>
+<xs:element name="createTagResponse" type="tns:createTagResponse"/>
+<xs:element name="createTagType" type="tns:createTagType"/>
+<xs:element name="createTagTypeResponse" type="tns:createTagTypeResponse"/>
+<xs:element name="createTags" type="tns:createTags"/>
+<xs:element name="createTagsResponse" type="tns:createTagsResponse"/>
+<xs:element name="getCurrency" type="tns:getCurrency"/>
+<xs:element name="getCurrencyById" type="tns:getCurrencyById"/>
+<xs:element name="getCurrencyByIdResponse" type="tns:getCurrencyByIdResponse"/>
+<xs:element name="getCurrencyResponse" type="tns:getCurrencyResponse"/>
+<xs:element name="getCurrencyValue" type="tns:getCurrencyValue"/>
+<xs:element name="getCurrencyValueResponse" type="tns:getCurrencyValueResponse"/>
+<xs:element name="getEntityTypeById" type="tns:getEntityTypeById"/>
+<xs:element name="getEntityTypeByIdResponse" type="tns:getEntityTypeByIdResponse"/>
+<xs:element name="getEntityTypes" type="tns:getEntityTypes"/>
+<xs:element name="getEntityTypesResponse" type="tns:getEntityTypesResponse"/>
+<xs:element name="getEnumerationMastersByEnumerationId" type="tns:getEnumerationMastersByEnumerationId"/>
+<xs:element name="getEnumerationMastersByEnumerationIdResponse" type="tns:getEnumerationMastersByEnumerationIdResponse"/>
+<xs:element name="getLanguageById" type="tns:getLanguageById"/>
+<xs:element name="getLanguageByIdResponse" type="tns:getLanguageByIdResponse"/>
+<xs:element name="getLanguages" type="tns:getLanguages"/>
+<xs:element name="getLanguagesResponse" type="tns:getLanguagesResponse"/>
+<xs:element name="getStateTransitions" type="tns:getStateTransitions"/>
+<xs:element name="getStateTransitionsResponse" type="tns:getStateTransitionsResponse"/>
+<xs:element name="getStatus" type="tns:getStatus"/>
+<xs:element name="getStatusById" type="tns:getStatusById"/>
+<xs:element name="getStatusByIdResponse" type="tns:getStatusByIdResponse"/>
+<xs:element name="getStatusByList" type="tns:getStatusByList"/>
+<xs:element name="getStatusByListResponse" type="tns:getStatusByListResponse"/>
+<xs:element name="getStatusResponse" type="tns:getStatusResponse"/>
+<xs:element name="getTag" type="tns:getTag"/>
+<xs:element name="getTagById" type="tns:getTagById"/>
+<xs:element name="getTagByIdResponse" type="tns:getTagByIdResponse"/>
+<xs:element name="getTagMastersByTagTypeId" type="tns:getTagMastersByTagTypeId"/>
+<xs:element name="getTagMastersByTagTypeIdResponse" type="tns:getTagMastersByTagTypeIdResponse"/>
+<xs:element name="getTagResponse" type="tns:getTagResponse"/>
+<xs:element name="getTagTypeById" type="tns:getTagTypeById"/>
+<xs:element name="getTagTypeByIdResponse" type="tns:getTagTypeByIdResponse"/>
+<xs:element name="getTagTypes" type="tns:getTagTypes"/>
+<xs:element name="getTagTypesResponse" type="tns:getTagTypesResponse"/>
+<xs:element name="getTags" type="tns:getTags"/>
+<xs:element name="getTagsByEntityId" type="tns:getTagsByEntityId"/>
+<xs:element name="getTagsByEntityIdResponse" type="tns:getTagsByEntityIdResponse"/>
+<xs:element name="getTagsByEntityIdWithEntityType" type="tns:getTagsByEntityIdWithEntityType"/>
+<xs:element name="getTagsByEntityIdWithEntityTypeResponse" type="tns:getTagsByEntityIdWithEntityTypeResponse"/>
+<xs:element name="getTagsById" type="tns:getTagsById"/>
+<xs:element name="getTagsByIdResponse" type="tns:getTagsByIdResponse"/>
+<xs:element name="getTagsResponse" type="tns:getTagsResponse"/>
+<xs:element name="getTenants" type="tns:getTenants"/>
+<xs:element name="getTenantsById" type="tns:getTenantsById"/>
+<xs:element name="getTenantsByIdResponse" type="tns:getTenantsByIdResponse"/>
+<xs:element name="getTenantsResponse" type="tns:getTenantsResponse"/>
+<xs:element name="removeTag" type="tns:removeTag"/>
+<xs:element name="removeTagResponse" type="tns:removeTagResponse"/>
+<xs:element name="removeTagType" type="tns:removeTagType"/>
+<xs:element name="removeTagTypeResponse" type="tns:removeTagTypeResponse"/>
+<xs:element name="removeTags" type="tns:removeTags"/>
+<xs:element name="removeTagsResponse" type="tns:removeTagsResponse"/>
+<xs:element name="updateTag" type="tns:updateTag"/>
+<xs:element name="updateTagResponse" type="tns:updateTagResponse"/>
+<xs:element name="updateTagType" type="tns:updateTagType"/>
+<xs:element name="updateTagTypeResponse" type="tns:updateTagTypeResponse"/>
+<xs:element name="updateTags" type="tns:updateTags"/>
+<xs:element name="updateTagsResponse" type="tns:updateTagsResponse"/>
+<xs:element name="validateOperation" type="tns:validateOperation"/>
+<xs:element name="validateOperationResponse" type="tns:validateOperationResponse"/>
+<xs:element name="validateStateTransition" type="tns:validateStateTransition"/>
+<xs:element name="validateStateTransitionResponse" type="tns:validateStateTransitionResponse"/>
+<xs:complexType name="getStatusById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStatusByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getStatusById" type="ns1:status"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="faultInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="causedBy" type="xs:string"/>
+      <xs:element minOccurs="0" name="code" type="xs:string"/>
+      <xs:element minOccurs="0" name="message" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTagsResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagsByEntityId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagsByEntityIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTagsByEntityId" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTag">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTag" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagTypeById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagTypeByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getTagTypeById" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEntityTypes">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getEntityTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getEntityTypes" type="ns1:entityType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEntityTypeById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEntityTypeByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getEntityTypeById" type="ns1:entityType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTagType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTagTypeResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTenantsById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTenantsByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getTenantsById" type="ns1:tenant"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStatusByList">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStatusByListResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getStatusByList" type="ns1:status"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCurrencyValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg1" type="ns1:currencyType"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCurrencyValueResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getCurrencyValue" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStateTransitions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="lifecycleId" type="xs:long"/>
+      <xs:element minOccurs="0" name="status" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStateTransitionsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getStateTransitions" type="ns1:status"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="removeTagResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagMastersByTagTypeId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagMastersByTagTypeIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTagMastersByTagTypeId" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTagResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createTag" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getTagById" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTagType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTagTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createTagType" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="validateOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="validateOperationResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="updateTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateTagResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="updateTag" type="ns1:Tag"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="createTagsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="createTags" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateTagType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateTagTypeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="updateTagType" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagTypes">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagTypesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTagTypes" type="ns1:TagType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLanguages">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getLanguagesResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getLanguages" type="ns1:languageType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getStatus">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getStatusResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getStatus" type="ns1:status"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLanguageById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getLanguageByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getLanguageById" type="ns1:languageType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTags">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTags" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagsById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagsByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getTagsById" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateTags">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="updateTagsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="updateTags" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCurrency">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getCurrencyResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getCurrency" type="ns1:currencyType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="validateStateTransition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:long"/>
+      <xs:element minOccurs="0" name="arg2" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="validateStateTransitionResponse">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTagsByEntityIdWithEntityType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+      <xs:element minOccurs="0" name="arg1" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTagsByEntityIdWithEntityTypeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTagsByEntityIdWithEntityType" type="ns1:Tags"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCurrencyById">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getCurrencyByIdResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="getCurrencyById" type="ns1:currencyType"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getTenants">
+    <xs:sequence/>
+  </xs:complexType>
+<xs:complexType name="getTenantsResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getTenants" type="ns1:tenant"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEnumerationMastersByEnumerationId">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+<xs:complexType name="getEnumerationMastersByEnumerationIdResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="getEnumerationMastersByEnumerationId" type="ns1:Enumeration"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

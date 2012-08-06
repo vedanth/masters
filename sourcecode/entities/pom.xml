@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                             http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+  <groupId>net.treetechnologies.masters</groupId>
+  <artifactId>masters</artifactId>
+  <version>0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>master-entities</artifactId>
+  <packaging>jar</packaging>
+
+  <name>Masters entities generator</name>
+
+    <dependencies>
+    <dependency>
+      <groupId>net.treetechnologies.utilities</groupId>
+      <artifactId>entitiesGenerator</artifactId>
+      <version>0.1-SNAPSHOT</version>
+    </dependency>
+    </dependencies>
+
+<build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <id>generate-entities</id>
+            <phase>validate</phase>
+            <configuration>
+              <target>
+
+                <java fork="true" classname="freemarker.Application" failOnError="false">
+                <arg value="orm.ftl"/>
+                <arg value="../../conf/entity-gen"/>
+                <arg value="../../conf/entityxmls"/>
+                <arg value="src/main/java"/>
+                    <classpath>
+                        <path refid="maven.compile.classpath"/>
+                    </classpath>
+                </java>
+
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>generate-persistence</id>
+            <phase>validate</phase>
+            <configuration>
+              <target>
+
+                <java fork="true" classname="freemarker.Application" failOnError="false">
+                <arg value="main.ftl"/>
+                <arg value="../../conf/persistence-gen"/>
+                <arg value="../../conf/entityxmls"/>
+                <arg value="../../conf"/>
+                    <classpath>
+                        <path refid="maven.compile.classpath"/>
+                    </classpath>
+                </java>
+
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>cleanup</id>
+            <phase>clean</phase>
+            <configuration>
+              <target>
+                    <delete dir="src/main/java/net/treetechnologies/entities"/>
+					<delete dir="target"/>
+					<delete file="../../conf/wsdl/xsd/schema2.xsd"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+        </plugin>
+
+        <plugin>
+           <groupId>com.sun.tools.jxc.maven2</groupId>
+           <artifactId>maven-jaxb-schemagen-plugin</artifactId>
+           <version>1.2</version>
+           <executions>
+               <execution>
+                   <phase>generate-resources</phase>
+                    <goals>
+                       <goal>generate</goal>
+                    </goals>
+              </execution>
+          </executions>
+
+           <configuration>
+               <project>${project}</project>
+               <destdir>../../conf/wsdl/xsd</destdir>
+                <schemas>
+                <schema>
+                <namespace>http://net/treetechnologies/entities/schema/masters</namespace>
+                    <file>Masters.xsd</file>
+                    </schema>
+                </schemas>
+               <srcdir>${project.build.sourceDirectory}/net/treetechnologies/entities/masters</srcdir>
+               <verbose>true</verbose>
+           </configuration>
+          <dependencies>
+               <dependency>
+                   <groupId>javax.xml.bind</groupId>
+                   <artifactId>jaxb-api</artifactId>
+                   <version>2.2</version>
+               </dependency>
+               <dependency>
+                   <groupId>com.sun.xml.bind</groupId>
+                   <artifactId>jaxb-xjc</artifactId>
+                   <version>2.2</version>
+               </dependency>
+               <dependency>
+                   <groupId>com.sun.xml.bind</groupId>
+                   <artifactId>jaxb-impl</artifactId>
+                   <version>2.2</version>
+               </dependency>
+               <dependency>
+                   <groupId>com.sun.xml.bind</groupId>
+                   <artifactId>jaxb-xjc</artifactId>
+                   <version>2.2</version>
+               </dependency>
+          </dependencies>
+     </plugin>
+
+
+    </plugins>
+  </build>
+
+</project>

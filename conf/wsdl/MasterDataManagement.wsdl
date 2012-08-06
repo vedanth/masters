@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="MasterDataManagementService" targetNamespace="http://net/treetechnologies/masters/services/interfaces/MasterDataManagement" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://net/treetechnologies/masters/services/interfaces/MasterDataManagement" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+<import namespace="http://net/treetechnologies/masters/services/interfaces/MasterDataManagement" schemaLocation="MasterDataManagement_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getTagsResponse">
+    <wsdl:part name="parameters" element="tns:getTagsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTags">
+    <wsdl:part name="parameters" element="tns:createTags">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTagType">
+    <wsdl:part name="parameters" element="tns:updateTagType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsByEntityId">
+    <wsdl:part name="parameters" element="tns:getTagsByEntityId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityTypes">
+    <wsdl:part name="parameters" element="tns:getEntityTypes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLanguageById">
+    <wsdl:part name="parameters" element="tns:getLanguageById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyValue">
+    <wsdl:part name="parameters" element="tns:getCurrencyValue">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityTypeById">
+    <wsdl:part name="parameters" element="tns:getEntityTypeById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTagType">
+    <wsdl:part name="parameters" element="tns:createTagType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTagTypeResponse">
+    <wsdl:part name="parameters" element="tns:updateTagTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagByIdResponse">
+    <wsdl:part name="parameters" element="tns:getTagByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyById">
+    <wsdl:part name="parameters" element="tns:getCurrencyById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLanguagesResponse">
+    <wsdl:part name="parameters" element="tns:getLanguagesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrency">
+    <wsdl:part name="parameters" element="tns:getCurrency">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStateTransitions">
+    <wsdl:part name="parameters" element="tns:getStateTransitions">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityTypesResponse">
+    <wsdl:part name="parameters" element="tns:getEntityTypesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsByEntityIdWithEntityType">
+    <wsdl:part name="parameters" element="tns:getTagsByEntityIdWithEntityType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusResponse">
+    <wsdl:part name="parameters" element="tns:getStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTagResponse">
+    <wsdl:part name="parameters" element="tns:createTagResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyValueResponse">
+    <wsdl:part name="parameters" element="tns:getCurrencyValueResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ApplicationException">
+    <wsdl:part name="ApplicationException" element="tns:FaultInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagMastersByTagTypeIdResponse">
+    <wsdl:part name="parameters" element="tns:getTagMastersByTagTypeIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTagTypeResponse">
+    <wsdl:part name="parameters" element="tns:createTagTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusByListResponse">
+    <wsdl:part name="parameters" element="tns:getStatusByListResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagTypeById">
+    <wsdl:part name="parameters" element="tns:getTagTypeById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateOperationResponse">
+    <wsdl:part name="parameters" element="tns:validateOperationResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagResponse">
+    <wsdl:part name="parameters" element="tns:getTagResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagById">
+    <wsdl:part name="parameters" element="tns:getTagById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTenantsResponse">
+    <wsdl:part name="parameters" element="tns:getTenantsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTag">
+    <wsdl:part name="parameters" element="tns:removeTag">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTag">
+    <wsdl:part name="parameters" element="tns:getTag">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTag">
+    <wsdl:part name="parameters" element="tns:createTag">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createTagsResponse">
+    <wsdl:part name="parameters" element="tns:createTagsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateOperation">
+    <wsdl:part name="parameters" element="tns:validateOperation">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusByIdResponse">
+    <wsdl:part name="parameters" element="tns:getStatusByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEnumerationMastersByEnumerationId">
+    <wsdl:part name="parameters" element="tns:getEnumerationMastersByEnumerationId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsByEntityIdResponse">
+    <wsdl:part name="parameters" element="tns:getTagsByEntityIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyResponse">
+    <wsdl:part name="parameters" element="tns:getCurrencyResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStateTransitionsResponse">
+    <wsdl:part name="parameters" element="tns:getStateTransitionsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEntityTypeByIdResponse">
+    <wsdl:part name="parameters" element="tns:getEntityTypeByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTag">
+    <wsdl:part name="parameters" element="tns:updateTag">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusById">
+    <wsdl:part name="parameters" element="tns:getStatusById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLanguages">
+    <wsdl:part name="parameters" element="tns:getLanguages">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagTypesResponse">
+    <wsdl:part name="parameters" element="tns:getTagTypesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsById">
+    <wsdl:part name="parameters" element="tns:getTagsById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagMastersByTagTypeId">
+    <wsdl:part name="parameters" element="tns:getTagMastersByTagTypeId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatus">
+    <wsdl:part name="parameters" element="tns:getStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTagResponse">
+    <wsdl:part name="parameters" element="tns:updateTagResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTags">
+    <wsdl:part name="parameters" element="tns:updateTags">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateStateTransitionResponse">
+    <wsdl:part name="parameters" element="tns:validateStateTransitionResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTagTypeResponse">
+    <wsdl:part name="parameters" element="tns:removeTagTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusByList">
+    <wsdl:part name="parameters" element="tns:getStatusByList">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTagResponse">
+    <wsdl:part name="parameters" element="tns:removeTagResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsByEntityIdWithEntityTypeResponse">
+    <wsdl:part name="parameters" element="tns:getTagsByEntityIdWithEntityTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTenantsById">
+    <wsdl:part name="parameters" element="tns:getTenantsById">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagTypeByIdResponse">
+    <wsdl:part name="parameters" element="tns:getTagTypeByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTags">
+    <wsdl:part name="parameters" element="tns:removeTags">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTenantsByIdResponse">
+    <wsdl:part name="parameters" element="tns:getTenantsByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getCurrencyByIdResponse">
+    <wsdl:part name="parameters" element="tns:getCurrencyByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getEnumerationMastersByEnumerationIdResponse">
+    <wsdl:part name="parameters" element="tns:getEnumerationMastersByEnumerationIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagsByIdResponse">
+    <wsdl:part name="parameters" element="tns:getTagsByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTags">
+    <wsdl:part name="parameters" element="tns:getTags">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTagsResponse">
+    <wsdl:part name="parameters" element="tns:removeTagsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLanguageByIdResponse">
+    <wsdl:part name="parameters" element="tns:getLanguageByIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateTagsResponse">
+    <wsdl:part name="parameters" element="tns:updateTagsResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTagTypes">
+    <wsdl:part name="parameters" element="tns:getTagTypes">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTenants">
+    <wsdl:part name="parameters" element="tns:getTenants">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeTagType">
+    <wsdl:part name="parameters" element="tns:removeTagType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="validateStateTransition">
+    <wsdl:part name="parameters" element="tns:validateStateTransition">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="MasterDataManagement">
+    <wsdl:operation name="getStatusById">
+      <wsdl:input name="getStatusById" message="tns:getStatusById">
+    </wsdl:input>
+      <wsdl:output name="getStatusByIdResponse" message="tns:getStatusByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTags">
+      <wsdl:input name="removeTags" message="tns:removeTags">
+    </wsdl:input>
+      <wsdl:output name="removeTagsResponse" message="tns:removeTagsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsByEntityId">
+      <wsdl:input name="getTagsByEntityId" message="tns:getTagsByEntityId">
+    </wsdl:input>
+      <wsdl:output name="getTagsByEntityIdResponse" message="tns:getTagsByEntityIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTag">
+      <wsdl:input name="getTag" message="tns:getTag">
+    </wsdl:input>
+      <wsdl:output name="getTagResponse" message="tns:getTagResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagTypeById">
+      <wsdl:input name="getTagTypeById" message="tns:getTagTypeById">
+    </wsdl:input>
+      <wsdl:output name="getTagTypeByIdResponse" message="tns:getTagTypeByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypes">
+      <wsdl:input name="getEntityTypes" message="tns:getEntityTypes">
+    </wsdl:input>
+      <wsdl:output name="getEntityTypesResponse" message="tns:getEntityTypesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypeById">
+      <wsdl:input name="getEntityTypeById" message="tns:getEntityTypeById">
+    </wsdl:input>
+      <wsdl:output name="getEntityTypeByIdResponse" message="tns:getEntityTypeByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTagType">
+      <wsdl:input name="removeTagType" message="tns:removeTagType">
+    </wsdl:input>
+      <wsdl:output name="removeTagTypeResponse" message="tns:removeTagTypeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTenantsById">
+      <wsdl:input name="getTenantsById" message="tns:getTenantsById">
+    </wsdl:input>
+      <wsdl:output name="getTenantsByIdResponse" message="tns:getTenantsByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByList">
+      <wsdl:input name="getStatusByList" message="tns:getStatusByList">
+    </wsdl:input>
+      <wsdl:output name="getStatusByListResponse" message="tns:getStatusByListResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyValue">
+      <wsdl:input name="getCurrencyValue" message="tns:getCurrencyValue">
+    </wsdl:input>
+      <wsdl:output name="getCurrencyValueResponse" message="tns:getCurrencyValueResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStateTransitions">
+      <wsdl:input name="getStateTransitions" message="tns:getStateTransitions">
+    </wsdl:input>
+      <wsdl:output name="getStateTransitionsResponse" message="tns:getStateTransitionsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTag">
+      <wsdl:input name="removeTag" message="tns:removeTag">
+    </wsdl:input>
+      <wsdl:output name="removeTagResponse" message="tns:removeTagResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagMastersByTagTypeId">
+      <wsdl:input name="getTagMastersByTagTypeId" message="tns:getTagMastersByTagTypeId">
+    </wsdl:input>
+      <wsdl:output name="getTagMastersByTagTypeIdResponse" message="tns:getTagMastersByTagTypeIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTag">
+      <wsdl:input name="createTag" message="tns:createTag">
+    </wsdl:input>
+      <wsdl:output name="createTagResponse" message="tns:createTagResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagById">
+      <wsdl:input name="getTagById" message="tns:getTagById">
+    </wsdl:input>
+      <wsdl:output name="getTagByIdResponse" message="tns:getTagByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTagType">
+      <wsdl:input name="createTagType" message="tns:createTagType">
+    </wsdl:input>
+      <wsdl:output name="createTagTypeResponse" message="tns:createTagTypeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateOperation">
+      <wsdl:input name="validateOperation" message="tns:validateOperation">
+    </wsdl:input>
+      <wsdl:output name="validateOperationResponse" message="tns:validateOperationResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTag">
+      <wsdl:input name="updateTag" message="tns:updateTag">
+    </wsdl:input>
+      <wsdl:output name="updateTagResponse" message="tns:updateTagResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTags">
+      <wsdl:input name="createTags" message="tns:createTags">
+    </wsdl:input>
+      <wsdl:output name="createTagsResponse" message="tns:createTagsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTagType">
+      <wsdl:input name="updateTagType" message="tns:updateTagType">
+    </wsdl:input>
+      <wsdl:output name="updateTagTypeResponse" message="tns:updateTagTypeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagTypes">
+      <wsdl:input name="getTagTypes" message="tns:getTagTypes">
+    </wsdl:input>
+      <wsdl:output name="getTagTypesResponse" message="tns:getTagTypesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguages">
+      <wsdl:input name="getLanguages" message="tns:getLanguages">
+    </wsdl:input>
+      <wsdl:output name="getLanguagesResponse" message="tns:getLanguagesResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input name="getStatus" message="tns:getStatus">
+    </wsdl:input>
+      <wsdl:output name="getStatusResponse" message="tns:getStatusResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguageById">
+      <wsdl:input name="getLanguageById" message="tns:getLanguageById">
+    </wsdl:input>
+      <wsdl:output name="getLanguageByIdResponse" message="tns:getLanguageByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTags">
+      <wsdl:input name="getTags" message="tns:getTags">
+    </wsdl:input>
+      <wsdl:output name="getTagsResponse" message="tns:getTagsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsById">
+      <wsdl:input name="getTagsById" message="tns:getTagsById">
+    </wsdl:input>
+      <wsdl:output name="getTagsByIdResponse" message="tns:getTagsByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTags">
+      <wsdl:input name="updateTags" message="tns:updateTags">
+    </wsdl:input>
+      <wsdl:output name="updateTagsResponse" message="tns:updateTagsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrency">
+      <wsdl:input name="getCurrency" message="tns:getCurrency">
+    </wsdl:input>
+      <wsdl:output name="getCurrencyResponse" message="tns:getCurrencyResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateStateTransition">
+      <wsdl:input name="validateStateTransition" message="tns:validateStateTransition">
+    </wsdl:input>
+      <wsdl:output name="validateStateTransitionResponse" message="tns:validateStateTransitionResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsByEntityIdWithEntityType">
+      <wsdl:input name="getTagsByEntityIdWithEntityType" message="tns:getTagsByEntityIdWithEntityType">
+    </wsdl:input>
+      <wsdl:output name="getTagsByEntityIdWithEntityTypeResponse" message="tns:getTagsByEntityIdWithEntityTypeResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyById">
+      <wsdl:input name="getCurrencyById" message="tns:getCurrencyById">
+    </wsdl:input>
+      <wsdl:output name="getCurrencyByIdResponse" message="tns:getCurrencyByIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTenants">
+      <wsdl:input name="getTenants" message="tns:getTenants">
+    </wsdl:input>
+      <wsdl:output name="getTenantsResponse" message="tns:getTenantsResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEnumerationMastersByEnumerationId">
+      <wsdl:input name="getEnumerationMastersByEnumerationId" message="tns:getEnumerationMastersByEnumerationId">
+    </wsdl:input>
+      <wsdl:output name="getEnumerationMastersByEnumerationIdResponse" message="tns:getEnumerationMastersByEnumerationIdResponse">
+    </wsdl:output>
+      <wsdl:fault name="ApplicationException" message="tns:ApplicationException">
+    </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MasterDataManagementServiceSoapBinding" type="tns:MasterDataManagement">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getStatusById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatusById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsByEntityId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagsByEntityId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagsByEntityIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTags">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeTags">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeTagsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTag">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTag">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagTypeById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagTypeById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagTypeByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEntityTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEntityTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEntityTypeById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEntityTypeById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEntityTypeByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTagType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeTagType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeTagTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTenantsById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTenantsById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTenantsByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStatusByList">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatusByList">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusByListResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyValue">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrencyValue">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrencyValueResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStateTransitions">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStateTransitions">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStateTransitionsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="removeTag">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="removeTag">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="removeTagResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagMastersByTagTypeId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagMastersByTagTypeId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagMastersByTagTypeIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTag">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createTag">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createTagResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTagType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createTagType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createTagTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateOperation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="validateOperation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateOperationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTag">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateTag">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateTagResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="createTags">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createTags">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createTagsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguages">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLanguages">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLanguagesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagTypes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagTypes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagTypesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTagType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateTagType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateTagTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getLanguageById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getLanguageById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLanguageByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTags">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTags">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagsById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagsByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrency">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrency">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrencyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateTags">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateTags">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateTagsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateStateTransition">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="validateStateTransition">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="validateStateTransitionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTagsByEntityIdWithEntityType">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTagsByEntityIdWithEntityType">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTagsByEntityIdWithEntityTypeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getCurrencyById">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getCurrencyById">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getCurrencyByIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTenants">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTenants">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTenantsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getEnumerationMastersByEnumerationId">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getEnumerationMastersByEnumerationId">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getEnumerationMastersByEnumerationIdResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="ApplicationException">
+        <soap:fault name="ApplicationException" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MasterDataManagementService">
+    <wsdl:port name="MasterDataManagementPort" binding="tns:MasterDataManagementServiceSoapBinding">
+      <soap:address location="http://localhost:8180/EntityService/MasterDataManagement"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

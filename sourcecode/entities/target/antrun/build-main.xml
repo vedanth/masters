@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="maven-antrun-" default="main"  >
+<target name="main">
+  <java fork="true" classname="freemarker.Application" failOnError="false">
+    <arg value="main.ftl"/>
+    <arg value="../../conf/persistence-gen"/>
+    <arg value="../../conf/entityxmls"/>
+    <arg value="../../conf"/>
+    <classpath>
+      <path refid="maven.compile.classpath"/>
+    </classpath>
+  </java>
+</target>
+</project>

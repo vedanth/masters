@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://net/treetechnologies/entities/schema/masters" xmlns:tns="http://net/treetechnologies/entities/schema/masters" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="Enumeration" type="tns:Enumeration"/>
+
+  <xs:element name="EnumerationMaster" type="tns:EnumerationMaster"/>
+
+  <xs:element name="Tag" type="tns:Tag"/>
+
+  <xs:element name="TagType" type="tns:TagType"/>
+
+  <xs:element name="Tags" type="tns:Tags"/>
+
+  <xs:element name="currencyType" type="tns:currencyType"/>
+
+  <xs:element name="entityType" type="tns:entityType"/>
+
+  <xs:element name="language" type="tns:languageType"/>
+
+  <xs:element name="lifecycleMaster" type="tns:lifecycleMaster"/>
+
+  <xs:element name="lifecycleOperations" type="tns:lifecycleOperations"/>
+
+  <xs:element name="lifecycleStateTransition" type="tns:lifecycleStateTransition"/>
+
+  <xs:element name="status" type="tns:status"/>
+
+  <xs:element name="tenant" type="tns:tenant"/>
+
+  <xs:complexType name="currencyType">
+    <xs:sequence>
+      <xs:element name="lastUpdatedDateTime" type="xs:dateTime"/>
+      <xs:element name="currencyId" type="xs:string"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="numberOfDecimals" type="xs:long"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entityType">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="entityTypeId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Enumeration">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="enumerationType" type="xs:long"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="enumerationId" type="xs:long"/>
+      <xs:element name="enumerationTypeId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="EnumerationMaster">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="enumerationMasterId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="languageType">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="languageId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lifecycleMaster">
+    <xs:sequence>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="lifecycleId" type="xs:long"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lifecycleOperations">
+    <xs:sequence>
+      <xs:element name="allow" type="xs:long"/>
+      <xs:element name="lifecycleId" type="xs:long"/>
+      <xs:element name="operation" type="xs:string"/>
+      <xs:element name="sourceStatus" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="lifecycleStateTransition">
+    <xs:sequence>
+      <xs:element name="allow" type="xs:long"/>
+      <xs:element name="lifeCycleId" type="xs:long"/>
+      <xs:element name="sourceStatus" type="xs:long"/>
+      <xs:element name="targetStatus" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="status">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Tag">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tagId" type="xs:long"/>
+      <xs:element name="tagTypeId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TagType">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="statusId" type="xs:long"/>
+      <xs:element name="tagTypeId" type="xs:long"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Tags">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="entityId" type="xs:long"/>
+      <xs:element name="entityTypeId" type="xs:long"/>
+      <xs:element name="tagId" type="xs:long"/>
+      <xs:element name="tagMasterId" type="xs:long"/>
+      <xs:element name="tagValue" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="tenant">
+    <xs:sequence>
+      <xs:element name="lastUpdatedTime" type="xs:dateTime"/>
+      <xs:element name="endDateTime" type="xs:dateTime"/>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="startDateTime" type="xs:dateTime"/>
+      <xs:element name="tenantId" type="xs:long"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

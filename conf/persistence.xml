@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="HELLO" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <!-- Conigure the follwing as per application needs -->  
+        <jta-data-source>java:jboss/datasources/postgres</jta-data-source>
+        <properties>
+            <!-- Conigure the follwing as per application needs -->  
+            <property name="hibernate.cache.infinispan.entity.eviction.strategy" value= "LRU"/>
+            <property name="hibernate.cache.infinispan.entity.eviction.wake_up_interval" value= "2000"/>
+            <property name="hibernate.cache.infinispan.entity.eviction.max_entries" value= "500000"/>
+            <property name="hibernate.cache.infinispan.entity.expiration.lifespan" value= "6000000"/>
+            <property name="hibernate.cache.infinispan.entity.expiration.max_idle" value= "3000000"/>
+            
+            <!-- Normally no need to change the following -->
+            <property name="hibernate.max_fetch_depth" value="0"/>          
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.use_query_cache" value="true"/>
+            <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.JBossTransactionManagerLookup"/>
+            <property name="hibernate.cache.infinispan.statistics" value="true"/>
+            
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Tenant" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Status" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Currency" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.EntityType" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.LifecycleMaster" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.LifecycleOperations" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.LifecycleStateTransition" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Language" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.TagType" value="transactional"/>
+            <property name="hibernate.ejb.collectioncache.net.treetechnologies.entities.masters.TagType.tagMasters" value="transactional"/>        
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Tag" value="transactional"/>
+            <property name="hibernate.ejb.collectioncache.net.treetechnologies.entities.masters.Tag.tags" value="transactional"/>        
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Tags" value="transactional"/>
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.EnumerationMaster" value="transactional"/>
+            <property name="hibernate.ejb.collectioncache.net.treetechnologies.entities.masters.EnumerationMaster.enumerations" value="transactional"/>        
+            <property name="hibernate.ejb.classcache.net.treetechnologies.entities.masters.Enumeration" value="transactional"/>
+        </properties>       
+    </persistence-unit>
+</persistence>

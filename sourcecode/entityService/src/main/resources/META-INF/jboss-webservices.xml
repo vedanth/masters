@@ -1,0 +1,25 @@
+<webservices xmlns="http://www.jboss.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        version="1.0"
+        xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss_webservices_1_0.xsd">
+
+<!--
+    The following is required for setting the context root of webservices
+     -->
+  <context-root>EntityServices</context-root> 
+<!--
+    The following is required for both basic http & ws-security based authentication/authorization of JAX-WS web services
+     -->
+     
+<port-component>
+<ejb-name>MasterDataManagementImpl</ejb-name>
+<port-component-name>MasterDataManagement</port-component-name>
+<port-component-uri>/MasterDataManagement</port-component-uri>
+<auth-method>BASIC</auth-method>
+<transport-guarantee>NONE</transport-guarantee>
+<secure-wsdl-access>false</secure-wsdl-access>
+</port-component>
+
+
+</webservices>
+
